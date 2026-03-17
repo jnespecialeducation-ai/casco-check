@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import { headers } from "next/headers";
 import { getAdminFirestore } from "@/lib/firebase/admin";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
+  await headers();
   try {
     const token = req.nextUrl.searchParams.get("token");
     if (!token) {

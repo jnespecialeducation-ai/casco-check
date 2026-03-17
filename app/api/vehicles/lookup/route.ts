@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { headers } from "next/headers";
 import { getAdminFirestore } from "@/lib/firebase/admin";
 
 export const dynamic = "force-dynamic";
@@ -8,6 +9,7 @@ export const dynamic = "force-dynamic";
  * 차량번호 + 휴대폰으로 등록된 차량 조회. 본인 확인 후 token 반환
  */
 export async function GET(req: NextRequest) {
+  await headers();
   try {
     const searchParams = req.nextUrl.searchParams;
     const carNumber = searchParams.get("carNumber")?.replace(/\s/g, "").trim() || "";
