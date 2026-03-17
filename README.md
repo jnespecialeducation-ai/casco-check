@@ -127,6 +127,13 @@ firebase deploy --only functions
 3. 환경변수 설정 (Firebase, `FIREBASE_SERVICE_ACCOUNT_KEY`, `ADMIN_PASSWORD`)
 4. Deploy 후 Firebase Authorized domains에 배포 URL 추가
 
+## 문자 발송 (나중에 추가 가능)
+
+관리자 "문자 보내기"는 현재 발송 로그만 남기고 실제 문자는 나가지 않습니다.  
+나중에 [알리고](https://smartsms.aligo.in) API 키를 발급받아 환경변수만 추가하면 즉시 실제 발송이 됩니다.
+
+**→ [SMS_SETUP.md](SMS_SETUP.md) 참고**
+
 ## 배포 체크리스트
 
 - [ ] `.env.local` → Vercel 환경변수로 설정

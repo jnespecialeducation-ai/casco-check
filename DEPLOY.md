@@ -59,3 +59,10 @@ git push -u origin main
 문제가 있으면 Vercel 대시보드 **Deployments** → 해당 배포 → **Logs** 에서 오류 내용을 확인하세요.
 
 > 나중에 본인 도메인(예: www.카스코검사.com)을 쓰려면 Vercel **Settings → Domains**에서 설정할 수 있습니다.
+
+---
+
+## 나중에 문자 발송 사용하려면
+
+관리자 화면의 "문자 보내기"는 현재 로그만 남기고 실제 발송은 하지 않습니다.  
+실제 발송을 사용하려면 **[SMS_SETUP.md](SMS_SETUP.md)** 를 참고해 알리고 API 환경변수만 추가하면 됩니다.

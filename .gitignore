@@ -24,6 +24,7 @@ firebase-debug.*.log
 *-debug.log
 
 # Service account (never commit)
+service-account.json
 *-service-account*.json
 
 # IDE
