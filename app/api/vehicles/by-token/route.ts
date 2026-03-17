@@ -1,12 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getAdminFirestore } from "@/lib/firebase/admin";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   try {
-    const { searchParams } = new URL(req.url);
-    const token = searchParams.get("token");
+    const token = req.nextUrl.searchParams.get("token");
     if (!token) {
       return NextResponse.json({ error: "token이 필요합니다." }, { status: 400 });
     }
