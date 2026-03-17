@@ -113,7 +113,7 @@ export default function AdminSmsLogsPage() {
         <Card>
           <Table>
             <TableHead>
-              <TableHeader className="w-12">
+              <TableHeader>
                 <input
                   type="checkbox"
                   checked={logs.length > 0 && selectedIds.size === logs.length}
