@@ -31,9 +31,17 @@ export function TableRow({ children }: { children: ReactNode }) {
   return <tr className="border-b border-slate-200 hover:bg-slate-50">{children}</tr>;
 }
 
-export function TableHeader({ children }: { children: ReactNode }) {
+export function TableHeader({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700">
+    <th
+      className={`border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 ${className}`}
+    >
       {children}
     </th>
   );
