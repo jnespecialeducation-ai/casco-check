@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminFirestore } from "@/lib/firebase/admin";
 
+export const dynamic = "force-dynamic";
+
 /**
  * GET /api/vehicles/lookup?carNumber=12가3456&phone=010-1234-5678
  * 차량번호 + 휴대폰으로 등록된 차량 조회. 본인 확인 후 token 반환
