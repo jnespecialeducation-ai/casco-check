@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // customers: 관리자만 read/write (등록은 Cloud Function registerVehicle 사용)
+    match /customers/{customerId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // vehicles: 관리자만 read/write (조회는 Cloud Function getVehicleByToken 사용)
+    match /vehicles/{vehicleId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // reservations: 관리자만 read, 생성은 Cloud Function createReservation
+    match /reservations/{reservationId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // sms_templates: 관리자만 read/write
+    match /sms_templates/{templateId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // sms_logs: 관리자 read, 생성은 Cloud Function (서버)
+    match /sms_logs/{logId} {
+      allow read: if request.auth != null;
+      allow create: if true;
+      allow update, delete: if request.auth != null;
+    }
+  }
+}

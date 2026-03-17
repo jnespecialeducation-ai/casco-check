@@ -1,0 +1,6 @@
+# 민감 파일 - 절대 배포하지 않음
+.env
+.env.local
+.env.*.local
+*-service-account*.json
+service-account.json
